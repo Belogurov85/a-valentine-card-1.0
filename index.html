@@ -34,20 +34,45 @@
         }
 
         /* Прогрессия градиентов */
-        body.level-0 { background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); }
-        body.level-5 { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); }
-        body.level-10 { background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%); }
-        body.level-15 { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); }
-        body.level-25 { background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%); }
-        body.level-35 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        body.level-0 {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+        }
+
+        body.level-5 {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        }
+
+        body.level-10 {
+            background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+        }
+
+        body.level-15 {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        }
+
+        body.level-25 {
+            background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);
+        }
+
+        body.level-35 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
         body.level-50 {
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             animation: rainbow-pulse 3s ease-in-out infinite;
         }
 
         @keyframes rainbow-pulse {
-            0%, 100% { filter: hue-rotate(0deg) brightness(1); }
-            50% { filter: hue-rotate(30deg) brightness(1.2); }
+
+            0%,
+            100% {
+                filter: hue-rotate(0deg) brightness(1);
+            }
+
+            50% {
+                filter: hue-rotate(30deg) brightness(1.2);
+            }
         }
 
         /* Анимированный фон из сердечек */
@@ -63,7 +88,9 @@
             transition: opacity 1s ease;
         }
 
-        .floating-hearts.active { opacity: 0.15; }
+        .floating-hearts.active {
+            opacity: 0.15;
+        }
 
         .floating-heart {
             position: absolute;
@@ -73,10 +100,23 @@
         }
 
         @keyframes float-diagonal {
-            0% { transform: translate(0, 100vh) rotate(0deg); opacity: 0; }
-            10% { opacity: 0.3; }
-            90% { opacity: 0.3; }
-            100% { transform: translate(50vw, -100vh) rotate(360deg); opacity: 0; }
+            0% {
+                transform: translate(0, 100vh) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.3;
+            }
+
+            90% {
+                opacity: 0.3;
+            }
+
+            100% {
+                transform: translate(50vw, -100vh) rotate(360deg);
+                opacity: 0;
+            }
         }
 
         .card {
@@ -97,8 +137,8 @@
             /* --- ИЗМЕНЕНИЯ ЗДЕСЬ --- */
             /* Используем Flexbox для вертикального выравнивания */
             display: flex;
-            flex-direction: column; 
-            align-items: center;    
+            flex-direction: column;
+            align-items: center;
             text-align: center;
             /* ----------------------- */
         }
@@ -115,8 +155,15 @@
         }
 
         @keyframes card-pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.02); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.02);
+            }
         }
 
         h1 {
@@ -136,8 +183,15 @@
         }
 
         @keyframes rainbow-slide {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
         }
 
         .wish-text {
@@ -149,13 +203,15 @@
             align-items: center;
             justify-content: center;
             margin: 15px 0;
-            width: 100%; /* Текст на всю ширину */
+            width: 100%;
+            /* Текст на всю ширину */
             transition: opacity 0.4s ease, transform 0.4s ease;
         }
 
         .heart-container {
             position: relative;
-            display: inline-block; /* Оставляем inline-block для бейджика */
+            display: inline-block;
+            /* Оставляем inline-block для бейджика */
             margin-bottom: 20px;
             /* Flex-контейнер родителя сам выровняет его по центру */
         }
@@ -180,11 +236,20 @@
             transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .counter-bump { animation: bump 0.3s ease; }
+        .counter-bump {
+            animation: bump 0.3s ease;
+        }
 
         @keyframes bump {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.4); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.4);
+            }
         }
 
         .gold-badge {
@@ -210,19 +275,43 @@
         }
 
         @keyframes glow-pulse {
-            0%, 100% { filter: drop-shadow(0 0 20px #ff4d6d); }
-            50% { filter: drop-shadow(0 0 35px #ff1f4b); }
+
+            0%,
+            100% {
+                filter: drop-shadow(0 0 20px #ff4d6d);
+            }
+
+            50% {
+                filter: drop-shadow(0 0 35px #ff1f4b);
+            }
         }
 
         @keyframes heartbeat {
-            0%, 100% { transform: scale(1); }
-            25% { transform: scale(1.05); }
-            50% { transform: scale(1); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            25% {
+                transform: scale(1.05);
+            }
+
+            50% {
+                transform: scale(1);
+            }
         }
 
         @keyframes heartbeat-fast {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
         }
 
         .heart-main:hover {
@@ -249,10 +338,12 @@
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
-            
+
             /* --- ИЗМЕНЕНИЯ ЗДЕСЬ --- */
-            margin-top: 5px; /* Немного уменьшил отступ сверху, т.к. у сердца есть отступ снизу */
-            display: block;  /* Гарантирует, что кнопка воспринимается как блок */
+            margin-top: 5px;
+            /* Немного уменьшил отступ сверху, т.к. у сердца есть отступ снизу */
+            display: block;
+            /* Гарантирует, что кнопка воспринимается как блок */
             /* ----------------------- */
         }
 
@@ -280,7 +371,9 @@
             transition: all 0.5s;
         }
 
-        .btn:hover::after { left: 120%; }
+        .btn:hover::after {
+            left: 120%;
+        }
 
         /* Курсор с trail */
         .cursor-trail {
@@ -292,8 +385,15 @@
         }
 
         @keyframes trail-fade {
-            0% { opacity: 1; transform: scale(1) translateY(0); }
-            100% { opacity: 0; transform: scale(0.3) translateY(-30px); }
+            0% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(0.3) translateY(-30px);
+            }
         }
 
         .particle {
@@ -311,8 +411,15 @@
         }
 
         @keyframes floatUp {
-            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
         }
 
         /* Попап достижений */
@@ -335,7 +442,9 @@
             border: 2px solid rgba(255, 255, 255, 0.3);
         }
 
-        .achievement-popup.show { top: 30px; }
+        .achievement-popup.show {
+            top: 30px;
+        }
 
         /* Ripple эффект */
         .ripple {
@@ -347,8 +456,17 @@
         }
 
         @keyframes ripple-animation {
-            0% { width: 0; height: 0; opacity: 1; }
-            100% { width: 300px; height: 300px; opacity: 0; }
+            0% {
+                width: 0;
+                height: 0;
+                opacity: 1;
+            }
+
+            100% {
+                width: 300px;
+                height: 300px;
+                opacity: 0;
+            }
         }
 
         /* Конфетти */
@@ -363,8 +481,15 @@
         }
 
         @keyframes confetti-fall {
-            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
         }
 
         .progress-bar-container {
@@ -411,7 +536,8 @@
         </div>
         <div class="progress-text" id="progressText">0 / 50</div>
 
-        <div class="wish-text" id="wish">Пусть жизнь будет наполнена<br>только приятными моментами<br>и добрыми чувствами. 🕊️</div>
+        <div class="wish-text" id="wish">Пусть жизнь будет наполнена<br>только приятными моментами<br>и добрыми
+            чувствами. 🕊️</div>
 
         <div class="heart-container">
             <div class="heart-main" id="heartMain" onclick="burst()">❤️</div>
@@ -461,6 +587,8 @@
         let gameFinished = false;
         let cursorTrailEnabled = false;
         let lastTrailTime = 0;
+        let baseBeta = null;
+        let baseGamma = null;
 
         // Создаём плавающие фоновые сердечки
         function createFloatingHearts() {
@@ -479,7 +607,7 @@
         // Cursor trail
         document.addEventListener('mousemove', (e) => {
             if (!cursorTrailEnabled) return;
-            
+
             const now = Date.now();
             if (now - lastTrailTime < 50) return;
             lastTrailTime = now;
@@ -676,7 +804,7 @@
                 playChord();
                 vibrate([100, 50, 100, 50, 200]);
                 showAchievement("🏆 ЛЕГЕНДА! 50 кликов! Ты достиг вершины!");
-                
+
                 for (let i = 0; i < 100; i++) {
                     setTimeout(() => createParticle(true), i * 20);
                 }
@@ -735,8 +863,20 @@
 
         function handleOrientation(e) {
             if (e.beta !== null && e.gamma !== null) {
-                const x = Math.round(Math.max(Math.min(e.beta - 45, 20), -20));
-                const y = Math.round(Math.max(Math.min(e.gamma, 20), -20));
+                // Если это первый запуск, фиксируем текущий угол как "ноль"
+                if (baseBeta === null) {
+                    baseBeta = e.beta;
+                    baseGamma = e.gamma;
+                }
+
+                // Вычисляем отклонение от начального положения
+                let betaDev = e.beta - baseBeta;
+                let gammaDev = e.gamma - baseGamma;
+
+                // Ограничиваем углы поворота карточки (не более 20 градусов)
+                const x = Math.max(Math.min(betaDev, 20), -20);
+                const y = Math.max(Math.min(gammaDev, 20), -20);
+
                 card.style.transform = `rotateY(${y}deg) rotateX(${-x}deg)`;
             }
         }
