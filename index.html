@@ -876,9 +876,9 @@
                 let targetX = (e.beta - baseBeta);
                 let targetY = (e.gamma - baseGamma);
 
-                // Ограничиваем углы (не более 15 градусов в любую сторону)
-                targetX = Math.max(Math.min(targetX, 15), -15);
-                targetY = Math.max(Math.min(targetY, 15), -15);
+                // Ограничиваем углы (не более 10 градусов в любую сторону)
+                targetX = Math.max(Math.min(targetX, 10), -10);
+                targetY = Math.max(Math.min(targetY, 10), -10);
 
                 // Мертвая зона (чтобы не дрожало, если телефон почти неподвижен)
                 if (Math.abs(targetX) < 0.5) targetX = 0;
