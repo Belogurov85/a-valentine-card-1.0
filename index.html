@@ -904,13 +904,7 @@
             window.addEventListener('deviceorientation', handleOrientation);
         }
 
-        const resetCard = () => {
-            card.style.transform = `rotateY(0deg) rotateX(0deg)`;
-        };
-
-        document.addEventListener('mouseleave', resetCard);
-        window.addEventListener('touchend', () => setTimeout(resetCard, 1000));
-
+        
         // Shake detection
         if (window.DeviceMotionEvent) {
             let lastShake = 0;
