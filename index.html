@@ -589,6 +589,9 @@
         let lastTrailTime = 0;
         let baseBeta = null;
         let baseGamma = null;
+        let currentX = 0;
+        let currentY = 0;
+        const smoothing = 0.15;
 
         // Создаём плавающие фоновые сердечки
         function createFloatingHearts() {
@@ -863,21 +866,29 @@
 
         function handleOrientation(e) {
             if (e.beta !== null && e.gamma !== null) {
-                // Если это первый запуск, фиксируем текущий угол как "ноль"
+                // Первая калибровка
                 if (baseBeta === null) {
                     baseBeta = e.beta;
                     baseGamma = e.gamma;
                 }
 
-                // Вычисляем отклонение от начального положения
-                let betaDev = e.beta - baseBeta;
-                let gammaDev = e.gamma - baseGamma;
+                // Вычисляем целевые углы
+                let targetX = (e.beta - baseBeta);
+                let targetY = (e.gamma - baseGamma);
 
-                // Ограничиваем углы поворота карточки (не более 20 градусов)
-                const x = Math.max(Math.min(betaDev, 20), -20);
-                const y = Math.max(Math.min(gammaDev, 20), -20);
+                // Ограничиваем углы (не более 15 градусов в любую сторону)
+                targetX = Math.max(Math.min(targetX, 15), -15);
+                targetY = Math.max(Math.min(targetY, 15), -15);
 
-                card.style.transform = `rotateY(${y}deg) rotateX(${-x}deg)`;
+                // Мертвая зона (чтобы не дрожало, если телефон почти неподвижен)
+                if (Math.abs(targetX) < 0.5) targetX = 0;
+                if (Math.abs(targetY) < 0.5) targetY = 0;
+
+                // Линейная интерполяция для плавности (LERP)
+                currentX += (targetX - currentX) * smoothing;
+                currentY += (targetY - currentY) * smoothing;
+
+                card.style.transform = `rotateY(${currentY.toFixed(2)}deg) rotateX(${-currentX.toFixed(2)}deg)`;
             }
         }
 
